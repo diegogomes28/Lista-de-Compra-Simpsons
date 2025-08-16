@@ -1,0 +1,424 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'simpson';
+    src: url('./simpsonfont/simpson.otf') format('opentype')
+}
+
+body {
+    font-family: 'simpson';
+    min-height: 100dvh;
+    background: linear-gradient(rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.97)), url(./banner.jpeg) no-repeat center;
+    display: flex;
+    background-size: cover;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    height: auto;
+    color: black;
+}
+
+
+main {
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    max-width: 1250px;
+}
+
+.mostrar {
+    display: block;
+}
+
+.invisivel {
+    display: none;
+}
+
+.opa {
+    margin-top: 400px;
+    position: relative;
+}
+
+.titulo_e_imagem {
+    position: absolute;
+    top: -90px;
+    right: 350px;
+}
+
+.homer {
+    position: absolute;
+    width: 400px;
+    height: 200px;
+    top: -115%;
+    right: -5%;
+    z-index: -5;
+}
+
+h2 {
+    font-size: min(72px, 10vw);
+    background: linear-gradient(to left, #ecc165, #FED90F);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    /* Para navegadores que suportam a propriedade padrão */
+    background-clip: text;
+    align-self: center;
+    display: inline;
+    flex-wrap: nowrap;
+}
+
+.fundo {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    height: auto;
+    width: 100%;
+
+}
+
+.gerador {
+    display: flex;
+    width: 100%;
+    gap: 10px;
+
+}
+
+#inp-tarefa {
+    margin-top: 20px;
+    width: 80%;
+    color: black;
+    height: 40px;
+    border: 2px solid #34495E;
+    border-radius: 24px;
+    padding: 5px 0 5px 20px;
+    font-family: 'simpson';
+    outline: none;
+    font-size: 20px;
+    background-color: #F5F5F5;
+}
+
+.botao,
+.limpar {
+    font-family: 'simpson';
+    padding: 0.5em;
+    cursor: pointer;
+    background: linear-gradient(to left, #ecc165, #FED90F);
+    border-radius: 24px;
+    color: white;
+    height: 40px;
+    margin-top: 15px;
+}
+
+.limpar {
+    background: #FF5C5C;
+}
+
+.botao:hover,
+.limpar:hover {
+    transition: 0.19s ease-in-out;
+    transform: scale(1.1);
+}
+
+.botao:not(:hover),
+.limpar:not(:hover) {
+    transition: 0.18s ease-in-out;
+    transform: scale(1);
+}
+
+.botao:active,
+.limpar:active {
+    filter: brightness(70%);
+}
+
+.resposta {
+    width: 80%;
+    display: block
+}
+
+.tabela_r {
+    padding: 1em;
+    background-color: #F5F5F5;
+    margin-top: 20px;
+    border-radius: 24px;
+    border: 2px solid #34495E;
+}
+
+.lista-compras {
+    margin-left: 15px;
+    list-style-type: none;
+
+}
+
+.item {
+    position: relative;
+    cursor: pointer;
+
+}
+
+.texto {
+    margin-left: 5px 0;
+    font-size: 20px;
+}
+
+
+.item::before {
+    width: 15px;
+    height: 10px;
+    content: "";
+    position: absolute;
+    left: -16px;
+    top: 13px;
+    background: url('./donuts.png') center/contain no-repeat;
+    z-index: 99;
+    display: block;
+
+}
+
+.comprado {
+    text-decoration-line: line-through;
+    text-decoration-thickness: 3.5px;
+    text-decoration-color: #4B3B2F;
+    opacity: 0.8;
+}
+
+.para-celular {
+    font-family: 'simpson';
+    padding: 0.5em;
+    cursor: pointer;
+    background: #FF5C5C;
+    border-radius: 24px;
+    color: white;
+    height: 50px;
+    margin-top: 15px;
+    display: none;
+    width: 120px;
+}
+
+
+
+@media screen and (max-width: 1000px) {
+    .para-celular {
+        display: block;
+    }
+
+    body {
+        background: linear-gradient(rgba(0, 0, 0, 0.80), rgba(0, 0, 0, 0.85)), url(./banner.jpeg) no-repeat center;
+    }
+
+    h2 {
+        text-wrap: nowrap;
+    }
+
+    main {
+        max-width: 100%;
+        width: 100%;
+        padding: 10px;
+    }
+
+    .opa {
+        margin-top: 135px;
+        position: relative;
+    }
+
+    .titulo_e_imagem {
+        position: absolute;
+        top: -25px;
+        right: 45px;
+    }
+
+    .homer {
+        position: absolute;
+        width: 160px;
+        height: 95px;
+        top: -120%;
+        right: 30%;
+        z-index: -5;
+    }
+
+    .gerador {
+        flex-direction: column;
+        gap: 1px;
+    }
+
+    #inp-tarefa {
+        width: 100%;
+    }
+
+    .mobile {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        margin: 2px 0 2px 0;
+    }
+
+    .mobile button {
+        width: 100%;
+        margin-top: 2px;
+    }
+
+    .mobile .limpar {
+        display: none;
+    }
+
+    .resposta {
+        width: 100%;
+        margin-top: -5px;
+    }
+
+    .tabela_r {
+        margin-top: 5px;
+    }
+
+    .botao:hover,
+    .limpar:hover {
+        transition: 0.19s ease-in-out;
+        transform: scale(1);
+    }
+
+    .botao:not(:hover),
+    .limpar:not(:hover) {
+        transition: 0.18s ease-in-out;
+        transform: scale(1);
+    }
+
+    .celular {
+        width: 100%;
+        display: inline-flex;
+        margin-top: 10px;
+    }
+
+    .celular>button {
+        margin-left: auto;
+
+    }
+
+}
+
+@media (max-width: 768px) {
+    .opa {
+        margin-top: 200px;
+    }
+
+    .titulo_e_imagem {
+        top: -60px;
+        right: 80px;
+    }
+
+    .homer {
+        width: 240px;
+        height: 150px;
+        top: -110%;
+        right: 5%;
+    }
+
+}
+
+@media (max-width: 600px) {
+    .celular {
+        display: inline-flex;
+    }
+
+    .para-celular {
+        display: block;
+    }
+
+    .titulo_e_imagem {
+        top: -70px;
+    }
+
+    .homer {
+        width: 240px;
+        height: 150px;
+        top: -145%;
+        right: 6%;
+
+    }
+}
+
+@media (max-width: 576px) {
+    .titulo_e_imagem {
+        top: -50px;
+        right: 40px;
+    }
+
+    .homer {
+        width: 240px;
+        height: 150px;
+        top: -145%;
+        right: 6%;
+
+    }
+
+    h2 {
+        text-wrap: nowrap;
+    }
+}
+
+@media (max-width: 500px) {
+    .para-celular {
+        padding: 1em 1em 1em 1em;
+        text-align: center;
+    }
+
+    .titulo_e_imagem {
+        right: 35px;
+        top: -50px;
+    }
+
+
+    .homer {
+        width: 240px;
+        height: 150px;
+        top: -245%;
+        right: -5%;
+
+    }
+
+    h2 {
+        font-size: 8vw;
+        text-wrap: nowrap;
+        right: 50%;
+
+    }
+}
+
+
+@media (max-width: 400px) {
+    .titulo_e_imagem {
+        top: -60px;
+        right: 5%;
+    }
+
+    .homer {
+        width: 220px;
+        height: 130px;
+        top: -160%;
+        right: 3%;
+
+    }
+
+    h2 {
+        font-size: 10vw;
+        text-wrap: nowrap;
+    }
+}
+
+@media (max-width: 380px) {
+
+
+    .homer {
+        width: 200px;
+        height: 120px;
+        top: -160%;
+        right: 3%;
+
+    }
+}
